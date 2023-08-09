@@ -21,8 +21,6 @@ with open(tgnet_path, 'rb') as f:
     buffer = BufferWrapper(f.read())
 
 tgdata = buffer.get_tg_android_session()
-valid_dcs = tgdata.validate_telethon_sessions()
-
-for session in valid_dcs:
-    client = session.telethon_client
-    client.send_message('me', 'Hello, World!')
+valid_session = tgdata.datacenters[tgdata.headers.currentDatacenterId-1]
+print('auth key:', valid_session.auth.authKeyPerm)
+print('telethon string session:', valid_session.telethon_string_session)
