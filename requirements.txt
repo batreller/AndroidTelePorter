@@ -1,1 +1,3 @@
-Telethon~=1.28.5
+Telethon~=1.35.0
+lxml~=5.2.2
+opentele~=1.15.1
