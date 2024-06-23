@@ -19,11 +19,9 @@ setup(
     long_description_content_type='text/markdown',
     long_description=long_description,
     url='https://github.com/batreller/AndroidTelePorter',
-    packages=find_packages(where="AndroidTelePorter"),
-    package_dir={"": "AndroidTelePorter"},
+    packages=find_packages(),
     license='MIT',
     install_requires=['Telethon~=1.35.0', 'lxml~=5.2.2', 'opentele~=1.15.1'],
-    keywords=['python', 'video', 'stream', 'video stream', 'camera stream', 'sockets'],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
