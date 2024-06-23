@@ -1,5 +1,8 @@
 # AndroidTelePorter
 
+[![pypi package](https://img.shields.io/pypi/v/AndroidTelePorter.svg)](https://pypi.python.org/pypi/AndroidTelePorter/)
+
+
 Serializer and deserializer for mobile telegram session
 
 ## Table of Contents
