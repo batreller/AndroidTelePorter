@@ -1,6 +1,5 @@
 import os
 import time
-from typing import Self
 
 from opentele.api import API
 from opentele.td import TDesktop, Account, AuthKeyType
@@ -26,7 +25,7 @@ class AndroidSession:
         self._userconfig_manager = userconfig_manager
 
     @classmethod
-    def from_tgnet(cls, tgnet_path: str, userconfig_path: str) -> Self:
+    def from_tgnet(cls, tgnet_path: str, userconfig_path: str) -> 'AndroidSession':
         """Read tgnet.dat and userconfing.xml file and return instance of current class
         that in future can be used for conversion between other formats
 
@@ -61,7 +60,7 @@ class AndroidSession:
                     auth_key_temp: bytes = 0,
                     auth_key_media_temp: bytes = 0,
                     authorized: int = 1
-                    ) -> Self:
+                    ) -> 'AndroidSession':
         """Create instance of current object with all needed fields
         In future can be used to convert to any possible format.
 
