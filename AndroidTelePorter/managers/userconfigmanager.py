@@ -7,7 +7,6 @@ Code https://github.com/batreller/AndroidTelePorter
 """
 
 import base64
-from typing import Union
 
 from telethon.extensions import BinaryReader
 from telethon.tl.types import UserFull, User, UserEmpty
@@ -38,7 +37,7 @@ class UserConfigManager:
         return cls.from_bytes(base64.b64decode(clean_base64(data)))
 
     @classmethod
-    def from_bytes(cls, data: Union[bytes, bytearray]) -> 'UserConfigManager':
+    def from_bytes(cls, data: bytes | bytearray) -> 'UserConfigManager':
         user = BinaryReader(data).tgread_object()
         if not isinstance(user, (User, UserEmpty, UserFull)):
             raise ValueError('Invalid bytes')

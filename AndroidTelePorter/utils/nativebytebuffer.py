@@ -7,7 +7,6 @@ Code https://github.com/batreller/AndroidTelePorter
 """
 
 from io import BytesIO
-from typing import Union
 
 
 class NativeByteBuffer:
@@ -61,7 +60,7 @@ class NativeByteBuffer:
     def read_string(self):
         return str(self.read_byte_array(), encoding='utf-8', errors='replace')
 
-    def write_bytes(self, data: Union[bytearray, bytes]):
+    def write_bytes(self, data: bytearray | bytes):
         self.stream.write(data)
 
     def write_number(self, number: int, length: int, signed=True):
@@ -79,7 +78,7 @@ class NativeByteBuffer:
         else:
             self.write_int(0xbc799737, signed=False)
 
-    def write_byte_array(self, data: Union[bytearray, bytes]):
+    def write_byte_array(self, data: bytearray | bytes):
         length = len(data)
         if length < 254:  # 1byte(len) + data
             self.write_number(length, 1, signed=False)

@@ -7,7 +7,7 @@ Code https://github.com/batreller/AndroidTelePorter
 """
 
 import time
-from typing import Literal, Union
+from typing import Literal
 
 from AndroidTelePorter.utils.nativebytebuffer import NativeByteBuffer
 from AndroidTelePorter.models.auth import AuthCredentials
@@ -30,7 +30,7 @@ class TgnetManager:
         return buffer
 
     @classmethod
-    def from_buffer(cls, data: Union[bytes, bytearray]) -> 'TgnetManager':
+    def from_buffer(cls, data: bytes | bytearray) -> 'TgnetManager':
         buffer = NativeByteBuffer(data)
         session = TgnetSession(
             headers=cls._read_headers(buffer),
