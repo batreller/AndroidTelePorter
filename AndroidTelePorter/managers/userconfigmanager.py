@@ -8,6 +8,7 @@ Code https://github.com/batreller/AndroidTelePorter
 
 import base64
 
+from telethon.errors import TypeNotFoundError
 from telethon.extensions import BinaryReader
 from telethon.tl.types import UserFull, User, UserEmpty
 
@@ -38,7 +39,11 @@ class UserConfigManager:
 
     @classmethod
     def from_bytes(cls, data: bytes | bytearray) -> 'UserConfigManager':
-        user = BinaryReader(data).tgread_object()
+        bdata = BinaryReader(data)
+        try:
+            user = bdata.tgread_object()
+        except TypeNotFoundError:
+            raise ValueError(f'Constructor ID {hex(bdata.read_int(signed=False))} not found, run pip install --upgrade git+https://github.com/LonamiWebs/Telethon.git')
         if not isinstance(user, (User, UserEmpty, UserFull)):
             raise ValueError('Invalid bytes')
         return cls(userconfig=user)
