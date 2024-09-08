@@ -45,3 +45,4 @@ if __name__ == '__main__':
     session.to_tgnet('converted/tgnet')  # will create all needed files right in directory that you specified
     session.to_tdata('converted/pc')  # will create another folder "tdata" inside directory that you specified
     session.to_telethon('converted/telethon.session')  # must end with .session
+    session.to_pyrogram('converted/pyrogram.session')  # must end with .session

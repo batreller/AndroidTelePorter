@@ -1,10 +1,12 @@
 import os
+import sqlite3
 import time
 
 from opentele.api import API
 from opentele.td import TDesktop, Account, AuthKeyType
 from opentele.td import AuthKey as AuthKeyOpentele
 from opentele.td.configs import DcId
+from pyrogram.storage.sqlite_storage import SCHEMA
 from telethon.crypto import AuthKey as AuthKeyTelethon
 from telethon.sessions import SQLiteSession
 
@@ -154,7 +156,7 @@ class AndroidSession:
         if not force and os.path.exists(filename):
             raise FileExistsError(f"{filename} already exists")
         if not force and not os.path.exists(os.path.dirname(filename)):
-            raise FileExistsError(f"The folder where you are trying to write .session file does not exist")
+            raise FileExistsError(f"The folder where you are trying to write .session file does not exist, you can set force=True to avoid this error")
         os.makedirs(os.path.dirname(filename), exist_ok=True)
 
         sqlite_session = SQLiteSession(filename)
@@ -218,6 +220,41 @@ class AndroidSession:
         account._setMtpAuthorizationCustom(dc_id, self._userconfig_manager.userconfig.id, [auth_key])
         client._addSingleAccount(account)
         client.SaveTData(tdata_path)
+
+    def to_pyrogram(self, filename: str, force: bool = True) -> None:
+        """Create pyrogram .session file and save it.
+
+        Args:
+            filename: Filename with full path where .session file will be saved
+            force: if True, will overwrite existing .session file, otherwise will raise an error
+        """
+
+        if not filename.endswith('.session'):
+            raise ValueError('filename must end with .session')
+        if os.path.exists(filename):
+            if not force:
+                raise FileExistsError(f"{filename} already exists")
+            else:
+                os.remove(filename)
+        if not force and os.path.exists(os.path.dirname(filename)):
+            raise FileExistsError(f"The folder where you are trying to write .session file does not exist, you can set force=True to avoid this error")
+        os.makedirs(os.path.dirname(filename), exist_ok=True)
+
+        with sqlite3.connect(filename) as db:
+            db.executescript(SCHEMA)
+            db.commit()
+            db.execute("INSERT INTO version VALUES (?)", (3,))
+            params = (
+                self._tgnet_manager.session.dc_id,  # dc id
+                6,  # api id
+                self._tgnet_manager.session.headers.test_backend,  # test mode
+                self._tgnet_manager.session.auth_key,  # auth key
+                0,  # timestamp
+                self._userconfig_manager.userconfig.id or 9999,  # user id
+                self._userconfig_manager.userconfig.bot if hasattr(self._userconfig_manager.userconfig, 'bot') else False  # is bot
+            )
+            db.execute("INSERT INTO sessions VALUES (?, ?, ?, ?, ?, ?, ?)", params)
+            db.commit()
 
     def to_tgnet(self, path: str, force: bool = True) -> None:
         """Create mobile telegram tgnet session for original telegram client (not Telegram X).

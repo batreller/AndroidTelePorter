@@ -1,3 +1,5 @@
 Telethon~=1.35.0
 lxml~=5.2.2
 opentele~=1.15.1
+setuptools~=72.1.0
+Pyrogram~=2.0.106
