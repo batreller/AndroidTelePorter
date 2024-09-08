@@ -7,7 +7,7 @@ here = os.path.abspath(os.path.dirname(__file__))
 with codecs.open(os.path.join(here, "README.md"), encoding="utf-8") as fh:
     long_description = "\n" + fh.read()
 
-VERSION = '1.1.0'
+VERSION = '1.1.1'
 DESCRIPTION = 'Serializer and deserializer for mobile telegram session'
 
 setup(
@@ -21,7 +21,7 @@ setup(
     url='https://github.com/batreller/AndroidTelePorter',
     packages=find_packages(),
     license='MIT',
-    install_requires=['Telethon~=1.35.0', 'lxml~=5.2.2', 'opentele~=1.15.1', 'setuptools~=72.1.0', 'Pyrogram~=2.0.106'],
+    install_requires=['telethon', 'lxml~=5.2.2', 'opentele~=1.15.1', 'setuptools~=72.1.0', 'Pyrogram~=2.0.106'],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
