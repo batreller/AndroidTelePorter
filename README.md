@@ -49,6 +49,8 @@ session.to_tgnet('converted/tgnet')  # will create all needed files right in dir
 session.to_tdata('converted/pc')  # will create another folder "tdata" inside directory that you specified
 # or
 session.to_telethon('converted/telethon.session')  # must end with .session
+# or
+session.to_pyrogram('converted/pyrogram.session')  # must end with .session
 ```
 
 #### Creating mobile session from auth key, dc id and user id
