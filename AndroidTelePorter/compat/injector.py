@@ -80,7 +80,7 @@ class _LegacyBase(TLObject):
 
     def __repr__(self) -> str:
         body = ', '.join(f'{k}={v!r}' for k, v in self.__dict__.get('_values', {}).items())
-        return f'{type(self)._NAME}({body})'
+        return f'{type(self).__name__}({body})'
 
 
 def _read_single(reader: BinaryReader, arg: _Arg):
@@ -218,5 +218,5 @@ def read_user_config(data: bytes) -> UserConfig:
         username=tree.get('username'),
         phone=tree.get('phone'),
         bot=bool(tree.get('bot')),
-        is_empty=str(tree.get('_', '')).lower() == 'userempty',
+        is_empty=str(tree.get('_', '')).split('_')[0].lower() == 'userempty',
     )
