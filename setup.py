@@ -29,7 +29,8 @@ setup(
         # pinned fork with python 3.13 support
         'opentele @ git+https://github.com/surfaceflinger/opentele.git@786afa220e786b8967d41ae66082f122c040ceb7',
         'setuptools>=65.0.0',
-        'Pyrogram>=2.0.106',
+        # drop-in pyrogram fork, actively maintained
+        'kurigram>=2.2.23',
     ],
     classifiers=[
         'Development Status :: 5 - Production/Stable',

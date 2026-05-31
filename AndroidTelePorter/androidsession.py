@@ -6,17 +6,18 @@ from opentele.api import API
 from opentele.td import TDesktop, Account, AuthKeyType
 from opentele.td import AuthKey as AuthKeyOpentele
 from opentele.td.configs import DcId
-from pyrogram.storage.sqlite_storage import SCHEMA
+from pyrogram.storage.sqlite_storage import SCHEMA, SQLiteStorage
 from telethon.crypto import AuthKey as AuthKeyTelethon
 from telethon.sessions import SQLiteSession
+from telethon.tl.types import User
 
+from AndroidTelePorter.compat import pyrogram_schema
 from AndroidTelePorter.managers import TgnetManager, UserConfigManager
 from AndroidTelePorter.constants.datacenters import DATACENTERS
 from AndroidTelePorter.models.auth import AuthCredentials
 from AndroidTelePorter.models.datacenter import Datacenter
 from AndroidTelePorter.models.headers import Headers
 from AndroidTelePorter.models.tgnet_session import TgnetSession
-from telethon.tl.types import User
 from AndroidTelePorter.models.userconfig import UserConfig
 from AndroidTelePorter.utils.filesmanager import read_tgnet, read_userconfig, write_tgnet, write_userconfig
 from AndroidTelePorter.utils.auth_key import calculate_id
@@ -240,9 +241,11 @@ class AndroidSession:
         os.makedirs(os.path.dirname(filename), exist_ok=True)
 
         with sqlite3.connect(filename) as db:
-            db.executescript(SCHEMA)
+            # Use pyrogram 2.0.106 schema (VERSION=3) for compatibility with not only kurigram but with pyrogram too.
+            # kurigram will auto-run migrations 4 -> 5 -> 6 -> 7 on first open,
+            db.executescript(pyrogram_schema.SCHEMA)
             db.commit()
-            db.execute("INSERT INTO version VALUES (?)", (3,))
+            db.execute("INSERT INTO version VALUES (?)", (pyrogram_schema.VERSION,))
             params = (
                 self._tgnet_manager.session.dc_id,  # dc id
                 6,  # api id
