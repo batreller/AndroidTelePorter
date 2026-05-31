@@ -9,8 +9,10 @@ Code https://github.com/batreller/AndroidTelePorter
 import base64
 
 from telethon.errors import TypeNotFoundError
-from telethon.extensions import BinaryReader
-from telethon.tl.types import UserFull, User, UserEmpty
+from telethon.tl.types import User, UserEmpty
+
+from AndroidTelePorter.compat import read_user_config
+from AndroidTelePorter.models.userconfig import UserConfig
 
 
 def clean_base64(data: str) -> str:
@@ -30,8 +32,8 @@ def clean_base64(data: str) -> str:
 
 
 class UserConfigManager:
-    def __init__(self, userconfig: User | UserEmpty | UserFull) -> None:
-        self.userconfig: User | UserEmpty | UserFull = userconfig
+    def __init__(self, userconfig: UserConfig) -> None:
+        self.userconfig: UserConfig = userconfig
 
     @classmethod
     def from_base64(cls, data: str) -> 'UserConfigManager':
@@ -39,11 +41,30 @@ class UserConfigManager:
 
     @classmethod
     def from_bytes(cls, data: bytes | bytearray) -> 'UserConfigManager':
-        bdata = BinaryReader(data)
+        data = bytes(data)
         try:
-            user = bdata.tgread_object()
-        except TypeNotFoundError:
-            raise ValueError(f'Constructor ID {hex(bdata.read_int(signed=False))} not found, run pip install --upgrade git+https://github.com/LonamiWebs/Telethon.git')
-        if not isinstance(user, (User, UserEmpty, UserFull)):
+            userconfig = read_user_config(data)
+        except TypeNotFoundError as e:
+            raise ValueError(
+                f'Unknown constructor ID {hex(e.invalid_constructor_id)}. '
+                f'This Telegram data uses an API layer not yet supported. '
+                f'Fix: add this constructor (and any missing dependencies) to '
+                f'AndroidTelePorter/compat/data/legacy.tl, or please open an issue at '
+                f'https://github.com/batreller/AndroidTelePorter'
+            ) from e
+
+        if userconfig.id is None:
             raise ValueError('Invalid bytes')
-        return cls(userconfig=user)
+
+        return cls(userconfig=userconfig)
+
+    def to_telethon_user(self) -> User | UserEmpty:
+        if self.userconfig.is_empty:
+            return UserEmpty(id=self.userconfig.id)
+        return User(
+            id=self.userconfig.id,
+            first_name=self.userconfig.first_name,
+            username=self.userconfig.username,
+            phone=self.userconfig.phone,
+            bot=self.userconfig.bot,
+        )

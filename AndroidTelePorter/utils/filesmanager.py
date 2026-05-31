@@ -36,7 +36,8 @@ def write_userconfig(userconfig_manager: UserConfigManager, path: str) -> None:
     root = etree.Element("map")
     user_element = etree.SubElement(root, "string")
     user_element.set("name", "user")
-    user_element.text = base64.b64encode(userconfig_manager.userconfig._bytes()).decode('utf-8')
+    user_bytes = userconfig_manager.to_telethon_user()._bytes()
+    user_element.text = base64.b64encode(user_bytes).decode('utf-8')
     tree = etree.ElementTree(root)
     tree.write(os.path.join(path, 'userconfing.xml'), pretty_print=True, xml_declaration=True,
                encoding="utf-8", standalone="yes")

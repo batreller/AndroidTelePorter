@@ -16,7 +16,8 @@ from AndroidTelePorter.models.auth import AuthCredentials
 from AndroidTelePorter.models.datacenter import Datacenter
 from AndroidTelePorter.models.headers import Headers
 from AndroidTelePorter.models.tgnet_session import TgnetSession
-from telethon.tl.types import UserEmpty, User
+from telethon.tl.types import User
+from AndroidTelePorter.models.userconfig import UserConfig
 from AndroidTelePorter.utils.filesmanager import read_tgnet, read_userconfig, write_tgnet, write_userconfig
 from AndroidTelePorter.utils.auth_key import calculate_id
 
@@ -141,7 +142,7 @@ class AndroidSession:
                 ]
             )
         )
-        userconfig = UserConfigManager(UserEmpty(id=user_id))
+        userconfig = UserConfigManager(UserConfig(id=user_id, is_empty=True))
         return cls(tgnet_manager=tgnet_manager, userconfig_manager=userconfig)
 
     def to_telethon(self, filename: str, force: bool = True) -> None:
@@ -169,17 +170,15 @@ class AndroidSession:
         )
 
         # telethon always adds first entity with user_id=0 and access_hash=user_id for some reason
+        user = self._userconfig_manager.userconfig
         user_id_entity = User(
             id=0,
-            access_hash=self._userconfig_manager.userconfig.id,
-            username=self._userconfig_manager.userconfig.username if hasattr(self._userconfig_manager.userconfig,
-                                                                             'username') else None,
-            phone=self._userconfig_manager.userconfig.phone if hasattr(self._userconfig_manager.userconfig,
-                                                                       'phone') else None,
-            first_name=self._userconfig_manager.userconfig.first_name if hasattr(self._userconfig_manager.userconfig,
-                                                                                 'first_name') else None,
+            access_hash=user.id,
+            username=user.username,
+            phone=user.phone,
+            first_name=user.first_name,
         )
-        sqlite_session.process_entities([user_id_entity, self._userconfig_manager.userconfig])
+        sqlite_session.process_entities([user_id_entity, self._userconfig_manager.to_telethon_user()])
         sqlite_session.save()
 
     def to_tdata(self, path: str, force: bool = True) -> None:
@@ -251,7 +250,7 @@ class AndroidSession:
                 self._tgnet_manager.session.auth_key,  # auth key
                 0,  # timestamp
                 self._userconfig_manager.userconfig.id or 9999,  # user id
-                self._userconfig_manager.userconfig.bot if hasattr(self._userconfig_manager.userconfig, 'bot') else False  # is bot
+                self._userconfig_manager.userconfig.bot  # is bot
             )
             db.execute("INSERT INTO sessions VALUES (?, ?, ?, ?, ?, ?, ?)", params)
             db.commit()

@@ -20,6 +20,8 @@ setup(
     long_description=long_description,
     url='https://github.com/batreller/AndroidTelePorter',
     packages=find_packages(),
+    package_data={'AndroidTelePorter': ['compat/data/*.tl']},
+    include_package_data=True,
     license='MIT',
     install_requires=['telethon', 'lxml>=5.3.0', 'opentele>=1.15.1', 'setuptools>=65.0.0', 'Pyrogram>=2.0.106'],
     classifiers=[
