@@ -56,8 +56,8 @@ class AndroidSession:
                     sessions_to_destroy: list[int] | None = None,
 
                     current_dc_version: int = 13,
-                    last_dc_init_version: int = 48502,
-                    last_dc_media_init_version: int = 48502,
+                    last_dc_init_version: int = 67502,
+                    last_dc_media_init_version: int = 67502,
                     is_cdn_datacenter: bool = False,
                     dc_salt: list[int] | None = None,
                     auth_key_temp: bytes = 0,
@@ -83,8 +83,8 @@ class AndroidSession:
             current_time: current unix timestamp (default time.time())
             sessions_to_destroy: sessions to destroy (default [])
             current_dc_version: current dc version (default 13)
-            last_dc_init_version: last dc init version (default 48502)
-            last_dc_media_init_version: last dc media init version (default 48502)
+            last_dc_init_version: last dc init version (default 67502)
+            last_dc_media_init_version: last dc media init version (default 67502)
             is_cdn_datacenter: whether current dc is a cdn datacenter (default False)
             dc_salt: dc salts, used somewhere deeply by MTProto
              you can read more detailed here https://core.telegram.org/schema/mtproto (default [])
@@ -206,7 +206,7 @@ class AndroidSession:
             lang_code = 'en'
 
         api = API.TelegramAndroid(
-            app_version='10.13.2 (4850)',
+            app_version='12.7.3 (6750)',
             lang_code=lang_code,
             system_lang_code=system_lang_code,
             lang_pack='android'
