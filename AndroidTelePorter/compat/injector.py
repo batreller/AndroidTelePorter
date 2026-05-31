@@ -211,7 +211,6 @@ def read_user_config(data: bytes) -> UserConfig:
         TypeNotFoundError: a constructor id (root or nested) is not present in
             ``data/legacy.tl`` and is unknown to Telethon.
     """
-    tree = read_user(data)
     obj = read_user(data)
     tree = obj.to_dict()
     return UserConfig(
