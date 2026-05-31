@@ -49,7 +49,7 @@ class _LegacyBase(TLObject):
     ``TLObject.pretty_format`` work correctly.
 
     Each concrete subclass is created dynamically in :func:`_make_class` with
-    a class-level ``_NAME`` (clean predicate, e.g. ``'userEmpty'``) and the
+    a class-level ``_NAME`` (capitalized predicate, e.g. ``'UserEmpty'``) and the
     usual ``CONSTRUCTOR_ID`` / ``SUBCLASS_OF_ID`` / ``from_reader`` that
     ``BinaryReader.tgread_object()`` needs.
 
@@ -189,7 +189,7 @@ def read_user(data: bytes):
 
     Ensures the historical constructors are injected first, then lets Telethon
     drive the whole recursive decode. Returns the raw decoded object (a real
-    Telethon class for modern ids, a :class:`TLObjectProxy` for legacy ones) —
+    Telethon class for modern ids, a :class:`_LegacyBase` subclass for legacy ones) —
     handy for debugging an unknown blob. Most callers want
     :func:`read_user_config`.
     """
@@ -203,8 +203,8 @@ def read_user_config(data: bytes) -> UserConfig:
 
     Decodes natively via :func:`read_user`, then keeps only the handful of
     fields the converters care about (id / first_name / username / phone / bot).
-    ``is_empty`` is True for the ``userEmpty`` placeholder constructor. Works for
-    both real Telethon objects and :class:`TLObjectProxy` instances because both
+    ``is_empty`` is True for the ``UserEmpty`` placeholder constructor. Works for
+    both real Telethon objects and :class:`_LegacyBase` subclasses because both
     expose ``to_dict()``.
 
     Raises:
