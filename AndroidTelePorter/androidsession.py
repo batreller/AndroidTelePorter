@@ -3,24 +3,23 @@ import sqlite3
 import time
 
 from opentele.api import API
-from opentele.td import TDesktop, Account, AuthKeyType
 from opentele.td import AuthKey as AuthKeyOpentele
+from opentele.td import TDesktop, Account, AuthKeyType
 from opentele.td.configs import DcId
-from pyrogram.storage.sqlite_storage import SCHEMA, SQLiteStorage
 from telethon.crypto import AuthKey as AuthKeyTelethon
 from telethon.sessions import SQLiteSession
 from telethon.tl.types import User
 
 from AndroidTelePorter.compat import pyrogram_schema
-from AndroidTelePorter.managers import TgnetManager, UserConfigManager
 from AndroidTelePorter.constants.datacenters import DATACENTERS
+from AndroidTelePorter.managers import TgnetManager, UserConfigManager
 from AndroidTelePorter.models.auth import AuthCredentials
 from AndroidTelePorter.models.datacenter import Datacenter
 from AndroidTelePorter.models.headers import Headers
 from AndroidTelePorter.models.tgnet_session import TgnetSession
 from AndroidTelePorter.models.userconfig import UserConfig
-from AndroidTelePorter.utils.filesmanager import read_tgnet, read_userconfig, write_tgnet, write_userconfig
 from AndroidTelePorter.utils.auth_key import calculate_id
+from AndroidTelePorter.utils.filesmanager import read_tgnet, read_userconfig, write_tgnet, write_userconfig
 
 
 class AndroidSession:
