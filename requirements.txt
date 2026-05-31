@@ -1,5 +1,6 @@
 telethon
 lxml>=5.3.0
-opentele>=1.15.1
+# pinned fork with python 3.13 support
+opentele @ git+https://github.com/surfaceflinger/opentele.git@786afa220e786b8967d41ae66082f122c040ceb7
 setuptools>=65.0.0
 Pyrogram>=2.0.106

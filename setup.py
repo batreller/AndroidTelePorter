@@ -23,7 +23,14 @@ setup(
     package_data={'AndroidTelePorter': ['compat/data/*.tl']},
     include_package_data=True,
     license='MIT',
-    install_requires=['telethon', 'lxml>=5.3.0', 'opentele>=1.15.1', 'setuptools>=65.0.0', 'Pyrogram>=2.0.106'],
+    install_requires=[
+        'telethon',
+        'lxml>=5.3.0',
+        # pinned fork with python 3.13 support
+        'opentele @ git+https://github.com/surfaceflinger/opentele.git@786afa220e786b8967d41ae66082f122c040ceb7',
+        'setuptools>=65.0.0',
+        'Pyrogram>=2.0.106',
+    ],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
