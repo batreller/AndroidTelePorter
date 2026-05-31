@@ -143,13 +143,13 @@ def _make_class(ctor: _Constructor):
         return obj
 
     return type(
-        f'{ctor.name}_{ctor.id:08x}',
+        f'{ctor.name[0].upper() + ctor.name[1:]}_{ctor.id:08x}',
         (_LegacyBase,),
         {
             # Class-level attributes required by BinaryReader.tgread_object()
             # (telethon/tl/tlobject.py::TLObject lines 34-36 + from_reader 208-210)
             # and by _LegacyBase.to_dict() / __repr__.
-            '_NAME': ctor.name,
+            '_NAME': f'{ctor.name[0].upper() + ctor.name[1:]}',
             'CONSTRUCTOR_ID': ctor.id,
             'SUBCLASS_OF_ID': 0,
             'from_reader': classmethod(from_reader),
