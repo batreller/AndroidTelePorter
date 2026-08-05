@@ -1,7 +1,7 @@
 // All historical versions of user / userFull / userEmpty
 // and their recursive dependencies, with id-suffixed names.
-// generated: 2026-05-30T19:02:02.733949+00:00
-// total constructors: 540
+// generated: 2026-08-05T21:30:35.944619+00:00
+// total constructors: 580
 
 // ##################################################
 // #                 DEPENDENCIES                   #
@@ -40,6 +40,8 @@ botAppSettings_c99b1950#c99b1950 flags:# placeholder_path:flags.0?bytes backgrou
 botCommand_b79d22ab#b79d22ab command:string params:string description:string = BotCommand;
 // first seen 2015-06-22 08:51:39 UTC (layer 31)
 botCommand_c27ac8c7#c27ac8c7 command:string description:string = BotCommand;
+// first seen 2026-07-10 10:04:26 UTC (layer 228)
+botCommand_9852d6d2#9852d6d2 flags:# ephemeral:flags.0?true command:string description:string = BotCommand;
 
 // ===== botInfo =====
 // first seen 2015-06-10 12:48:26 UTC (layer 31)
@@ -152,6 +154,8 @@ channel_7482147e#7482147e flags:# creator:flags.0?true left:flags.2?true broadca
 channel_fe685355#fe685355 flags:# creator:flags.0?true left:flags.2?true broadcast:flags.5?true verified:flags.7?true megagroup:flags.8?true restricted:flags.9?true signatures:flags.11?true min:flags.12?true scam:flags.19?true has_link:flags.20?true has_geo:flags.21?true slowmode_enabled:flags.22?true call_active:flags.23?true call_not_empty:flags.24?true fake:flags.25?true gigagroup:flags.26?true noforwards:flags.27?true join_to_send:flags.28?true join_request:flags.29?true forum:flags.30?true flags2:# stories_hidden:flags2.1?true stories_hidden_min:flags2.2?true stories_unavailable:flags2.3?true signature_profiles:flags2.12?true autotranslation:flags2.15?true broadcast_messages_allowed:flags2.16?true monoforum:flags2.17?true forum_tabs:flags2.19?true id:long access_hash:flags.13?long title:string username:flags.6?string photo:chatPhoto_1c6e1c11 date:int restriction_reason:flags.9?Vector<restrictionReason_d072acb4> admin_rights:flags.14?chatAdminRights_5fb224d5 banned_rights:flags.15?chatBannedRights_9f120418 default_banned_rights:flags.18?chatBannedRights_9f120418 participants_count:flags.17?int usernames:flags2.0?Vector<username_b4073647> stories_max_id:flags2.4?int color:flags2.7?peerColor_b54b5acf profile_color:flags2.8?peerColor_b54b5acf emoji_status:flags2.9?emojiStatus_e7ff068a level:flags2.10?int subscription_until_date:flags2.11?int bot_verification_icon:flags2.13?long send_paid_messages_stars:flags2.14?long linked_monoforum_id:flags2.18?long = Chat;
 // first seen 2026-02-28 15:07:08 UTC (layer 223)
 channel_1c32b11c#1c32b11c flags:# creator:flags.0?true left:flags.2?true broadcast:flags.5?true verified:flags.7?true megagroup:flags.8?true restricted:flags.9?true signatures:flags.11?true min:flags.12?true scam:flags.19?true has_link:flags.20?true has_geo:flags.21?true slowmode_enabled:flags.22?true call_active:flags.23?true call_not_empty:flags.24?true fake:flags.25?true gigagroup:flags.26?true noforwards:flags.27?true join_to_send:flags.28?true join_request:flags.29?true forum:flags.30?true flags2:# stories_hidden:flags2.1?true stories_hidden_min:flags2.2?true stories_unavailable:flags2.3?true signature_profiles:flags2.12?true autotranslation:flags2.15?true broadcast_messages_allowed:flags2.16?true monoforum:flags2.17?true forum_tabs:flags2.19?true custom_ranks_enabled:flags2.20?true id:long access_hash:flags.13?long title:string username:flags.6?string photo:chatPhoto_1c6e1c11 date:int restriction_reason:flags.9?Vector<restrictionReason_d072acb4> admin_rights:flags.14?chatAdminRights_5fb224d5 banned_rights:flags.15?chatBannedRights_9f120418 default_banned_rights:flags.18?chatBannedRights_9f120418 participants_count:flags.17?int usernames:flags2.0?Vector<username_b4073647> stories_max_id:flags2.4?recentStory_711d692d color:flags2.7?peerColor_b54b5acf profile_color:flags2.8?peerColor_b54b5acf emoji_status:flags2.9?emojiStatus_e7ff068a level:flags2.10?int subscription_until_date:flags2.11?int bot_verification_icon:flags2.13?long send_paid_messages_stars:flags2.14?long linked_monoforum_id:flags2.18?long = Chat;
+// first seen 2026-07-10 10:04:26 UTC (layer 228)
+channel_d49f34c6#d49f34c6 flags:# creator:flags.0?true left:flags.2?true broadcast:flags.5?true verified:flags.7?true megagroup:flags.8?true restricted:flags.9?true signatures:flags.11?true min:flags.12?true scam:flags.19?true has_link:flags.20?true has_geo:flags.21?true slowmode_enabled:flags.22?true call_active:flags.23?true call_not_empty:flags.24?true fake:flags.25?true gigagroup:flags.26?true noforwards:flags.27?true join_to_send:flags.28?true join_request:flags.29?true forum:flags.30?true flags2:# stories_hidden:flags2.1?true stories_hidden_min:flags2.2?true stories_unavailable:flags2.3?true signature_profiles:flags2.12?true autotranslation:flags2.15?true broadcast_messages_allowed:flags2.16?true monoforum:flags2.17?true forum_tabs:flags2.19?true id:long access_hash:flags.13?long title:string username:flags.6?string photo:chatPhoto_1c6e1c11 date:int restriction_reason:flags.9?Vector<restrictionReason_d072acb4> admin_rights:flags.14?chatAdminRights_5fb224d5 banned_rights:flags.15?chatBannedRights_9f120418 default_banned_rights:flags.18?chatBannedRights_9f120418 participants_count:flags.17?int usernames:flags2.0?Vector<username_b4073647> stories_max_id:flags2.4?recentStory_711d692d color:flags2.7?peerColor_b54b5acf profile_color:flags2.8?peerColor_b54b5acf emoji_status:flags2.9?emojiStatus_e7ff068a level:flags2.10?int subscription_until_date:flags2.11?int bot_verification_icon:flags2.13?long send_paid_messages_stars:flags2.14?long linked_monoforum_id:flags2.18?long linked_community_id:flags2.20?long = Chat;
 
 // ===== channelForbidden =====
 // first seen 2026-02-01 19:33:57 UTC (layer 223)
@@ -162,12 +166,12 @@ channelForbidden_17d493d5#17d493d5 flags:# broadcast:flags.5?true megagroup:flag
 chat_41cbf256#41cbf256 flags:# creator:flags.0?true left:flags.2?true deactivated:flags.5?true custom_ranks_enabled:flags.19?true call_active:flags.23?true call_not_empty:flags.24?true noforwards:flags.25?true id:long title:string photo:chatPhoto_1c6e1c11 participants_count:int date:int version:int migrated_to:flags.6?inputChannel_f35aec28 admin_rights:flags.14?chatAdminRights_5fb224d5 default_banned_rights:flags.18?chatBannedRights_9f120418 = Chat;
 
 // ===== chatAdminRights =====
-// first seen 2026-02-28 15:07:08 UTC (layer 223)
-chatAdminRights_5fb224d5#5fb224d5 flags:# change_info:flags.0?true post_messages:flags.1?true edit_messages:flags.2?true delete_messages:flags.3?true ban_users:flags.4?true invite_users:flags.5?true pin_messages:flags.7?true add_admins:flags.9?true anonymous:flags.10?true manage_call:flags.11?true other:flags.12?true manage_topics:flags.13?true post_stories:flags.14?true edit_stories:flags.15?true delete_stories:flags.16?true manage_direct_messages:flags.17?true manage_ranks:flags.18?true = ChatAdminRights;
+// first seen 2026-07-10 10:04:26 UTC (layer 228)
+chatAdminRights_5fb224d5#5fb224d5 flags:# change_info:flags.0?true post_messages:flags.1?true edit_messages:flags.2?true delete_messages:flags.3?true ban_users:flags.4?true invite_users:flags.5?true pin_messages:flags.7?true add_admins:flags.9?true anonymous:flags.10?true manage_call:flags.11?true other:flags.12?true manage_topics:flags.13?true post_stories:flags.14?true edit_stories:flags.15?true delete_stories:flags.16?true manage_direct_messages:flags.17?true manage_ranks:flags.18?true manage_linked_peers:flags.19?true = ChatAdminRights;
 
 // ===== chatBannedRights =====
-// first seen 2026-05-05 06:45:44 UTC (layer 225)
-chatBannedRights_9f120418#9f120418 flags:# view_messages:flags.0?true send_messages:flags.1?true send_media:flags.2?true send_stickers:flags.3?true send_gifs:flags.4?true send_games:flags.5?true send_inline:flags.6?true embed_links:flags.7?true send_polls:flags.8?true change_info:flags.10?true invite_users:flags.15?true pin_messages:flags.17?true manage_topics:flags.18?true send_photos:flags.19?true send_videos:flags.20?true send_roundvideos:flags.21?true send_audios:flags.22?true send_voices:flags.23?true send_docs:flags.24?true send_plain:flags.25?true edit_rank:flags.26?true send_reactions:flags.27?true until_date:int = ChatBannedRights;
+// first seen 2026-07-10 10:04:26 UTC (layer 228)
+chatBannedRights_9f120418#9f120418 flags:# view_messages:flags.0?true send_messages:flags.1?true send_media:flags.2?true send_stickers:flags.3?true send_gifs:flags.4?true send_games:flags.5?true send_inline:flags.6?true embed_links:flags.7?true send_polls:flags.8?true change_info:flags.10?true invite_users:flags.15?true pin_messages:flags.17?true manage_topics:flags.18?true send_photos:flags.19?true send_videos:flags.20?true send_roundvideos:flags.21?true send_audios:flags.22?true send_voices:flags.23?true send_docs:flags.24?true send_plain:flags.25?true edit_rank:flags.26?true send_reactions:flags.27?true manage_linked_peers:flags.28?true until_date:int = ChatBannedRights;
 
 // ===== chatEmpty =====
 // first seen 2023-07-20 03:20:07 UTC (layer 160)
@@ -192,6 +196,16 @@ chatTheme_c3dffc04#c3dffc04 emoticon:string = ChatTheme;
 // ===== chatThemeUniqueGift =====
 // first seen 2025-08-31 16:53:12 UTC (layer 214)
 chatThemeUniqueGift_3458f9c8#3458f9c8 gift:starGift_80ac53c3 theme_settings:Vector<themeSettings_fa58b6d4> = ChatTheme;
+
+// ===== community =====
+// first seen 2026-07-10 10:04:26 UTC (layer 228)
+community_44cfa2fd#44cfa2fd flags:# creator:flags.0?true left:flags.2?true min:flags.12?true flags2:# collapsed_in_dialogs:flags2.20?Bool id:long access_hash:flags.13?long title:string photo:chatPhoto_1c6e1c11 date:int admin_rights:flags.14?chatAdminRights_5fb224d5 default_banned_rights:flags.18?chatBannedRights_9f120418 = Chat;
+// first seen 2026-07-10 10:04:27 UTC (layer 228)
+community_65efe954#65efe954 flags:# creator:flags.0?true left:flags.2?true min:flags.12?true flags2:# collapsed_in_dialogs:flags2.20?true id:long access_hash:flags.13?long title:string photo:chatPhoto_1c6e1c11 date:int admin_rights:flags.14?chatAdminRights_5fb224d5 default_banned_rights:flags.18?chatBannedRights_9f120418 = Chat;
+
+// ===== communityForbidden =====
+// first seen 2026-07-10 10:04:26 UTC (layer 228)
+communityForbidden_fd3cdab8#fd3cdab8 flags:# id:long access_hash:flags.13?long title:string = Chat;
 
 // ===== dataJSON =====
 // first seen 2026-03-25 06:08:49 UTC (layer 224)
@@ -462,6 +476,22 @@ inputMediaWebPage_c21b8849#c21b8849 flags:# force_large_media:flags.0?true force
 // ===== inputMessageEntityMentionName =====
 // first seen 2023-07-20 03:20:07 UTC (layer 160)
 inputMessageEntityMentionName_208e68c9#208e68c9 offset:int length:int user_id:inputUser_f21158c6 = MessageEntity;
+
+// ===== inputPageBlockMap =====
+// first seen 2026-06-09 10:27:37 UTC (layer 227)
+inputPageBlockMap_574b617f#574b617f geo:inputGeoPoint_48222faf zoom:int w:int h:int caption:pageCaption_6f747657 = PageBlock;
+
+// ===== inputPageBlockOrderedList =====
+// first seen 2026-06-09 10:27:37 UTC (layer 227)
+inputPageBlockOrderedList_b94cb32b#b94cb32b flags:# reversed:flags.2?true items:Vector<InputPageListOrderedItem> start:flags.0?int type:flags.1?string = PageBlock;
+
+// ===== inputPageListOrderedItemBlocks =====
+// first seen 2026-06-09 10:27:37 UTC (layer 227)
+inputPageListOrderedItemBlocks_7d7b3802#7d7b3802 flags:# checkbox:flags.0?true checked:flags.1?true blocks:Vector<PageBlock> value:flags.2?int type:flags.3?string = InputPageListOrderedItem;
+
+// ===== inputPageListOrderedItemText =====
+// first seen 2026-06-09 10:27:37 UTC (layer 227)
+inputPageListOrderedItemText_9bb48f20#9bb48f20 flags:# checkbox:flags.0?true checked:flags.1?true text:RichText value:flags.2?int type:flags.3?string = InputPageListOrderedItem;
 
 // ===== inputPeerChannel =====
 // first seen 2023-07-20 03:20:07 UTC (layer 160)
@@ -869,6 +899,10 @@ pageBlockAuthorDate_baafe5e0#baafe5e0 author:RichText published_date:int = PageB
 // first seen 2023-07-20 03:20:07 UTC (layer 160)
 pageBlockBlockquote_263d7c26#263d7c26 text:RichText caption:RichText = PageBlock;
 
+// ===== pageBlockBlockquoteBlocks =====
+// first seen 2026-06-09 10:28:10 UTC (layer 227)
+pageBlockBlockquoteBlocks_e6e47c4#e6e47c4 blocks:Vector<PageBlock> caption:RichText = PageBlock;
+
 // ===== pageBlockChannel =====
 // first seen 2023-07-20 03:20:07 UTC (layer 160)
 pageBlockChannel_ef1751b5#ef1751b5 channel:chat_41cbf256 = PageBlock;
@@ -905,6 +939,30 @@ pageBlockFooter_48870999#48870999 text:RichText = PageBlock;
 // first seen 2023-07-20 03:20:07 UTC (layer 160)
 pageBlockHeader_bfd064ec#bfd064ec text:RichText = PageBlock;
 
+// ===== pageBlockHeading1 =====
+// first seen 2026-06-09 10:27:37 UTC (layer 227)
+pageBlockHeading1_baff072f#baff072f text:RichText = PageBlock;
+
+// ===== pageBlockHeading2 =====
+// first seen 2026-06-09 10:27:37 UTC (layer 227)
+pageBlockHeading2_96b2aec#96b2aec text:RichText = PageBlock;
+
+// ===== pageBlockHeading3 =====
+// first seen 2026-06-09 10:27:37 UTC (layer 227)
+pageBlockHeading3_67e731ad#67e731ad text:RichText = PageBlock;
+
+// ===== pageBlockHeading4 =====
+// first seen 2026-06-09 10:27:37 UTC (layer 227)
+pageBlockHeading4_b532772b#b532772b text:RichText = PageBlock;
+
+// ===== pageBlockHeading5 =====
+// first seen 2026-06-09 10:27:37 UTC (layer 227)
+pageBlockHeading5_dbbe6c6a#dbbe6c6a text:RichText = PageBlock;
+
+// ===== pageBlockHeading6 =====
+// first seen 2026-06-09 10:27:37 UTC (layer 227)
+pageBlockHeading6_682a41a9#682a41a9 text:RichText = PageBlock;
+
 // ===== pageBlockKicker =====
 // first seen 2023-07-20 03:20:07 UTC (layer 160)
 pageBlockKicker_1e148390#1e148390 text:RichText = PageBlock;
@@ -917,17 +975,23 @@ pageBlockList_e4e88011#e4e88011 items:Vector<PageListItem> = PageBlock;
 // first seen 2023-07-20 03:20:07 UTC (layer 160)
 pageBlockMap_a44f3ef6#a44f3ef6 geo:geoPoint_b2a2f663 zoom:int w:int h:int caption:pageCaption_6f747657 = PageBlock;
 
+// ===== pageBlockMath =====
+// first seen 2026-06-09 10:27:37 UTC (layer 227)
+pageBlockMath_59080c20#59080c20 source:string = PageBlock;
+
 // ===== pageBlockOrderedList =====
 // first seen 2023-07-20 03:20:07 UTC (layer 160)
 pageBlockOrderedList_9a8ae1e1#9a8ae1e1 items:Vector<PageListOrderedItem> = PageBlock;
+// first seen 2026-06-09 10:28:10 UTC (layer 227)
+pageBlockOrderedList_1fd6f6c1#1fd6f6c1 flags:# reversed:flags.2?true items:Vector<PageListOrderedItem> start:flags.0?int type:flags.1?string = PageBlock;
 
 // ===== pageBlockParagraph =====
 // first seen 2023-07-20 03:20:07 UTC (layer 160)
 pageBlockParagraph_467a0766#467a0766 text:RichText = PageBlock;
 
 // ===== pageBlockPhoto =====
-// first seen 2023-07-20 03:20:07 UTC (layer 160)
-pageBlockPhoto_1759c560#1759c560 flags:# photo_id:long caption:pageCaption_6f747657 url:flags.0?string webpage_id:flags.0?long = PageBlock;
+// first seen 2026-06-09 10:27:37 UTC (layer 227)
+pageBlockPhoto_1759c560#1759c560 flags:# spoiler:flags.1?true photo_id:long caption:pageCaption_6f747657 url:flags.0?string webpage_id:flags.0?long = PageBlock;
 
 // ===== pageBlockPreformatted =====
 // first seen 2023-07-20 03:20:07 UTC (layer 160)
@@ -957,6 +1021,10 @@ pageBlockSubtitle_8ffa9a1f#8ffa9a1f text:RichText = PageBlock;
 // first seen 2023-07-20 03:20:07 UTC (layer 160)
 pageBlockTable_bf4dea82#bf4dea82 flags:# bordered:flags.0?true striped:flags.1?true title:RichText rows:Vector<pageTableRow_e0c0c5e5> = PageBlock;
 
+// ===== pageBlockThinking =====
+// first seen 2026-06-09 10:28:09 UTC (layer 227)
+pageBlockThinking_3c29a3e2#3c29a3e2 text:RichText = PageBlock;
+
 // ===== pageBlockTitle =====
 // first seen 2023-07-20 03:20:07 UTC (layer 160)
 pageBlockTitle_70abc3fd#70abc3fd text:RichText = PageBlock;
@@ -966,8 +1034,8 @@ pageBlockTitle_70abc3fd#70abc3fd text:RichText = PageBlock;
 pageBlockUnsupported_13567e8a#13567e8a = PageBlock;
 
 // ===== pageBlockVideo =====
-// first seen 2023-07-20 03:20:07 UTC (layer 160)
-pageBlockVideo_7c8fe7b6#7c8fe7b6 flags:# autoplay:flags.0?true loop:flags.1?true video_id:long caption:pageCaption_6f747657 = PageBlock;
+// first seen 2026-06-09 10:27:37 UTC (layer 227)
+pageBlockVideo_7c8fe7b6#7c8fe7b6 flags:# autoplay:flags.0?true loop:flags.1?true spoiler:flags.2?true video_id:long caption:pageCaption_6f747657 = PageBlock;
 
 // ===== pageCaption =====
 // first seen 2023-07-20 03:20:07 UTC (layer 160)
@@ -976,18 +1044,30 @@ pageCaption_6f747657#6f747657 text:RichText credit:RichText = PageCaption;
 // ===== pageListItemBlocks =====
 // first seen 2023-07-20 03:20:07 UTC (layer 160)
 pageListItemBlocks_25e073fc#25e073fc blocks:Vector<PageBlock> = PageListItem;
+// first seen 2026-06-09 10:27:37 UTC (layer 227)
+pageListItemBlocks_63ca67aa#63ca67aa flags:# checkbox:flags.0?true checked:flags.1?true blocks:Vector<PageBlock> = PageListItem;
 
 // ===== pageListItemText =====
 // first seen 2023-07-20 03:20:07 UTC (layer 160)
 pageListItemText_b92fb6cd#b92fb6cd text:RichText = PageListItem;
+// first seen 2026-06-09 10:27:37 UTC (layer 227)
+pageListItemText_2f58683c#2f58683c flags:# checkbox:flags.0?true checked:flags.1?true text:RichText = PageListItem;
 
 // ===== pageListOrderedItemBlocks =====
 // first seen 2023-07-20 03:20:07 UTC (layer 160)
 pageListOrderedItemBlocks_98dd8936#98dd8936 num:string blocks:Vector<PageBlock> = PageListOrderedItem;
+// first seen 2026-06-09 10:27:37 UTC (layer 227)
+pageListOrderedItemBlocks_422931d4#422931d4 flags:# checkbox:flags.0?true checked:flags.1?true num:string blocks:Vector<PageBlock> = PageListOrderedItem;
+// first seen 2026-06-09 10:28:10 UTC (layer 227)
+pageListOrderedItemBlocks_8ff2d5f0#8ff2d5f0 flags:# checkbox:flags.0?true checked:flags.1?true num:flags.2?string blocks:Vector<PageBlock> value:flags.3?int type:flags.4?string = PageListOrderedItem;
 
 // ===== pageListOrderedItemText =====
 // first seen 2023-07-20 03:20:07 UTC (layer 160)
 pageListOrderedItemText_5e068047#5e068047 num:string text:RichText = PageListOrderedItem;
+// first seen 2026-06-09 10:27:37 UTC (layer 227)
+pageListOrderedItemText_cd3ea036#cd3ea036 flags:# checkbox:flags.0?true checked:flags.1?true num:string text:RichText = PageListOrderedItem;
+// first seen 2026-06-09 10:28:10 UTC (layer 227)
+pageListOrderedItemText_15031189#15031189 flags:# checkbox:flags.0?true checked:flags.1?true num:flags.2?string text:RichText value:flags.3?int type:flags.4?string = PageListOrderedItem;
 
 // ===== pageRelatedArticle =====
 // first seen 2023-07-20 03:20:07 UTC (layer 160)
@@ -1425,13 +1505,49 @@ storyViews_8d595cd6#8d595cd6 flags:# has_viewers:flags.1?true views_count:int fo
 // first seen 2023-07-20 03:20:07 UTC (layer 160)
 textAnchor_35553762#35553762 text:RichText name:string = RichText;
 
+// ===== textAutoEmail =====
+// first seen 2026-06-09 10:27:37 UTC (layer 227)
+textAutoEmail_c556a45d#c556a45d text:RichText = RichText;
+
+// ===== textAutoPhone =====
+// first seen 2026-06-09 10:27:37 UTC (layer 227)
+textAutoPhone_24c26789#24c26789 text:RichText = RichText;
+
+// ===== textAutoUrl =====
+// first seen 2026-06-09 10:27:37 UTC (layer 227)
+textAutoUrl_ac6a83aa#ac6a83aa text:RichText = RichText;
+
+// ===== textBankCard =====
+// first seen 2026-06-09 10:27:37 UTC (layer 227)
+textBankCard_b956812d#b956812d text:RichText = RichText;
+
 // ===== textBold =====
 // first seen 2023-07-20 03:20:07 UTC (layer 160)
 textBold_6724abc4#6724abc4 text:RichText = RichText;
 
+// ===== textBotCommand =====
+// first seen 2026-06-09 10:27:37 UTC (layer 227)
+textBotCommand_2ff29d3#2ff29d3 text:RichText = RichText;
+
+// ===== textCashtag =====
+// first seen 2026-06-09 10:27:37 UTC (layer 227)
+textCashtag_7b9e1801#7b9e1801 text:RichText = RichText;
+
 // ===== textConcat =====
 // first seen 2023-07-20 03:20:07 UTC (layer 160)
 textConcat_7e6260d7#7e6260d7 texts:Vector<RichText> = RichText;
+
+// ===== textCustomEmoji =====
+// first seen 2026-06-09 10:27:37 UTC (layer 227)
+textCustomEmoji_a26156c0#a26156c0 document_id:long alt:string = RichText;
+
+// ===== textDate =====
+// first seen 2026-06-09 10:27:37 UTC (layer 227)
+textDate_a5b45e2b#a5b45e2b flags:# relative:flags.0?true short_time:flags.1?true long_time:flags.2?true short_date:flags.3?true long_date:flags.4?true day_of_week:flags.5?true text:RichText date:int = RichText;
+
+// ===== textDiff =====
+// first seen 2026-07-10 10:04:27 UTC (layer 228)
+textDiff_9686cb50#9686cb50 text:RichText old_text:RichText = RichText;
 
 // ===== textEmail =====
 // first seen 2023-07-20 03:20:07 UTC (layer 160)
@@ -1445,6 +1561,10 @@ textEmpty_dc3d824f#dc3d824f = RichText;
 // first seen 2023-07-20 03:20:07 UTC (layer 160)
 textFixed_6c3f19b9#6c3f19b9 text:RichText = RichText;
 
+// ===== textHashtag =====
+// first seen 2026-06-09 10:27:37 UTC (layer 227)
+textHashtag_519524ea#519524ea text:RichText = RichText;
+
 // ===== textImage =====
 // first seen 2023-07-20 03:20:07 UTC (layer 160)
 textImage_81ccf4f#81ccf4f document_id:long w:int h:int = RichText;
@@ -1457,6 +1577,18 @@ textItalic_d912a59c#d912a59c text:RichText = RichText;
 // first seen 2023-07-20 03:20:07 UTC (layer 160)
 textMarked_34b8621#34b8621 text:RichText = RichText;
 
+// ===== textMath =====
+// first seen 2026-06-09 10:27:37 UTC (layer 227)
+textMath_9d2eac97#9d2eac97 source:string = RichText;
+
+// ===== textMention =====
+// first seen 2026-06-09 10:27:37 UTC (layer 227)
+textMention_cd24cf44#cd24cf44 text:RichText = RichText;
+
+// ===== textMentionName =====
+// first seen 2026-06-09 10:27:37 UTC (layer 227)
+textMentionName_1a9fbfc#1a9fbfc text:RichText user_id:long = RichText;
+
 // ===== textPhone =====
 // first seen 2023-07-20 03:20:07 UTC (layer 160)
 textPhone_1ccb966a#1ccb966a text:RichText phone:string = RichText;
@@ -1464,6 +1596,10 @@ textPhone_1ccb966a#1ccb966a text:RichText phone:string = RichText;
 // ===== textPlain =====
 // first seen 2023-07-20 03:20:07 UTC (layer 160)
 textPlain_744694e0#744694e0 text:string = RichText;
+
+// ===== textSpoiler =====
+// first seen 2026-06-09 10:27:37 UTC (layer 227)
+textSpoiler_4c2a5d62#4c2a5d62 text:RichText = RichText;
 
 // ===== textStrike =====
 // first seen 2023-07-20 03:20:07 UTC (layer 160)
@@ -1726,8 +1862,10 @@ user_59476956#59476956 flags:# self:flags.10?true contact:flags.11?true mutual_c
 user_4b46c37e#4b46c37e flags:# self:flags.10?true contact:flags.11?true mutual_contact:flags.12?true deleted:flags.13?true bot:flags.14?true bot_chat_history:flags.15?true bot_nochats:flags.16?true verified:flags.17?true restricted:flags.18?true min:flags.20?true bot_inline_geo:flags.21?true support:flags.23?true scam:flags.24?true apply_min_photo:flags.25?true fake:flags.26?true bot_attach_menu:flags.27?true premium:flags.28?true attach_menu_enabled:flags.29?true flags2:# bot_can_edit:flags2.1?true close_friend:flags2.2?true stories_hidden:flags2.3?true stories_unavailable:flags2.4?true contact_require_premium:flags2.10?true bot_business:flags2.11?true bot_has_main_app:flags2.13?true id:long access_hash:flags.0?long first_name:flags.1?string last_name:flags.2?string username:flags.3?string phone:flags.4?string photo:flags.5?userProfilePhoto_82d1f706 status:flags.6?UserStatus bot_info_version:flags.14?int restriction_reason:flags.18?Vector<restrictionReason_d072acb4> bot_inline_placeholder:flags.19?string lang_code:flags.22?string emoji_status:flags.30?emojiStatus_929b619d usernames:flags2.0?Vector<username_b4073647> stories_max_id:flags2.5?int color:flags2.8?peerColor_b54b5acf profile_color:flags2.9?peerColor_b54b5acf bot_active_users:flags2.12?int bot_verification_icon:flags2.14?long = User;
 // first seen 2025-10-10 05:26:57 UTC (layer 216)
 user_20b1422#20b1422 flags:# self:flags.10?true contact:flags.11?true mutual_contact:flags.12?true deleted:flags.13?true bot:flags.14?true bot_chat_history:flags.15?true bot_nochats:flags.16?true verified:flags.17?true restricted:flags.18?true min:flags.20?true bot_inline_geo:flags.21?true support:flags.23?true scam:flags.24?true apply_min_photo:flags.25?true fake:flags.26?true bot_attach_menu:flags.27?true premium:flags.28?true attach_menu_enabled:flags.29?true flags2:# bot_can_edit:flags2.1?true close_friend:flags2.2?true stories_hidden:flags2.3?true stories_unavailable:flags2.4?true contact_require_premium:flags2.10?true bot_business:flags2.11?true bot_has_main_app:flags2.13?true bot_forum_view:flags2.16?true id:long access_hash:flags.0?long first_name:flags.1?string last_name:flags.2?string username:flags.3?string phone:flags.4?string photo:flags.5?userProfilePhoto_82d1f706 status:flags.6?UserStatus bot_info_version:flags.14?int restriction_reason:flags.18?Vector<restrictionReason_d072acb4> bot_inline_placeholder:flags.19?string lang_code:flags.22?string emoji_status:flags.30?emojiStatus_e7ff068a usernames:flags2.0?Vector<username_b4073647> stories_max_id:flags2.5?int color:flags2.8?peerColor_b54b5acf profile_color:flags2.9?peerColor_b54b5acf bot_active_users:flags2.12?int bot_verification_icon:flags2.14?long send_paid_messages_stars:flags2.15?long = User;
-// first seen 2026-05-05 06:45:43 UTC (layer 225)
-user_31774388#31774388 flags:# self:flags.10?true contact:flags.11?true mutual_contact:flags.12?true deleted:flags.13?true bot:flags.14?true bot_chat_history:flags.15?true bot_nochats:flags.16?true verified:flags.17?true restricted:flags.18?true min:flags.20?true bot_inline_geo:flags.21?true support:flags.23?true scam:flags.24?true apply_min_photo:flags.25?true fake:flags.26?true bot_attach_menu:flags.27?true premium:flags.28?true attach_menu_enabled:flags.29?true flags2:# bot_can_edit:flags2.1?true close_friend:flags2.2?true stories_hidden:flags2.3?true stories_unavailable:flags2.4?true contact_require_premium:flags2.10?true bot_business:flags2.11?true bot_has_main_app:flags2.13?true bot_forum_view:flags2.16?true bot_forum_can_manage_topics:flags2.17?true bot_can_manage_bots:flags2.18?true bot_guestchat:flags2.19?true id:long access_hash:flags.0?long first_name:flags.1?string last_name:flags.2?string username:flags.3?string phone:flags.4?string photo:flags.5?userProfilePhoto_82d1f706 status:flags.6?UserStatus bot_info_version:flags.14?int restriction_reason:flags.18?Vector<restrictionReason_d072acb4> bot_inline_placeholder:flags.19?string lang_code:flags.22?string emoji_status:flags.30?emojiStatus_e7ff068a usernames:flags2.0?Vector<username_b4073647> stories_max_id:flags2.5?recentStory_711d692d color:flags2.8?peerColor_b54b5acf profile_color:flags2.9?peerColor_b54b5acf bot_active_users:flags2.12?int bot_verification_icon:flags2.14?long send_paid_messages_stars:flags2.15?long = User;
+// first seen 2026-06-09 10:27:37 UTC (layer 227)
+user_31774388#31774388 flags:# self:flags.10?true contact:flags.11?true mutual_contact:flags.12?true deleted:flags.13?true bot:flags.14?true bot_chat_history:flags.15?true bot_nochats:flags.16?true verified:flags.17?true restricted:flags.18?true min:flags.20?true bot_inline_geo:flags.21?true support:flags.23?true scam:flags.24?true apply_min_photo:flags.25?true fake:flags.26?true bot_attach_menu:flags.27?true premium:flags.28?true attach_menu_enabled:flags.29?true flags2:# bot_can_edit:flags2.1?true close_friend:flags2.2?true stories_hidden:flags2.3?true stories_unavailable:flags2.4?true contact_require_premium:flags2.10?true bot_business:flags2.11?true bot_has_main_app:flags2.13?true bot_forum_view:flags2.16?true bot_forum_can_manage_topics:flags2.17?true bot_can_manage_bots:flags2.18?true bot_guestchat:flags2.19?true bot_guard:flags2.20?true id:long access_hash:flags.0?long first_name:flags.1?string last_name:flags.2?string username:flags.3?string phone:flags.4?string photo:flags.5?userProfilePhoto_82d1f706 status:flags.6?UserStatus bot_info_version:flags.14?int restriction_reason:flags.18?Vector<restrictionReason_d072acb4> bot_inline_placeholder:flags.19?string lang_code:flags.22?string emoji_status:flags.30?emojiStatus_e7ff068a usernames:flags2.0?Vector<username_b4073647> stories_max_id:flags2.5?recentStory_711d692d color:flags2.8?peerColor_b54b5acf profile_color:flags2.9?peerColor_b54b5acf bot_active_users:flags2.12?int bot_verification_icon:flags2.14?long send_paid_messages_stars:flags2.15?long = User;
+// first seen 2026-07-10 10:04:30 UTC (layer 228)
+user_b1b8cc83#b1b8cc83 flags:# self:flags.10?true contact:flags.11?true mutual_contact:flags.12?true deleted:flags.13?true bot:flags.14?true bot_chat_history:flags.15?true bot_nochats:flags.16?true verified:flags.17?true restricted:flags.18?true min:flags.20?true bot_inline_geo:flags.21?true support:flags.23?true scam:flags.24?true apply_min_photo:flags.25?true fake:flags.26?true bot_attach_menu:flags.27?true premium:flags.28?true attach_menu_enabled:flags.29?true flags2:# bot_can_edit:flags2.1?true close_friend:flags2.2?true stories_hidden:flags2.3?true stories_unavailable:flags2.4?true contact_require_premium:flags2.10?true bot_business:flags2.11?true bot_has_main_app:flags2.13?true bot_forum_view:flags2.16?true bot_forum_can_manage_topics:flags2.17?true bot_can_manage_bots:flags2.18?true bot_guestchat:flags2.19?true bot_guard:flags2.20?true id:long access_hash:flags.0?long first_name:flags.1?string last_name:flags.2?string username:flags.3?string phone:flags.4?string photo:flags.5?userProfilePhoto_82d1f706 status:flags.6?UserStatus bot_info_version:flags.14?int restriction_reason:flags.18?Vector<restrictionReason_d072acb4> bot_inline_placeholder:flags.19?string lang_code:flags.22?string emoji_status:flags.30?emojiStatus_e7ff068a usernames:flags2.0?Vector<username_b4073647> stories_max_id:flags2.5?recentStory_711d692d color:flags2.8?peerColor_b54b5acf profile_color:flags2.9?peerColor_b54b5acf bot_active_users:flags2.12?int bot_verification_icon:flags2.14?long send_paid_messages_stars:flags2.15?long linked_community_id:flags2.21?long = User;
 
 // ===== userEmpty =====
 // first seen 2014-05-30 08:53:19 UTC (layer 15)
