@@ -7,7 +7,7 @@ here = os.path.abspath(os.path.dirname(__file__))
 with codecs.open(os.path.join(here, "README.md"), encoding="utf-8") as fh:
     long_description = "\n" + fh.read()
 
-VERSION = '1.2.0'
+VERSION = '1.2.1'
 DESCRIPTION = 'Serializer and deserializer for mobile telegram session'
 
 setup(
